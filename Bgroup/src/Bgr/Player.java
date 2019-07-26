@@ -49,7 +49,10 @@ import javax.swing.JPanel;
 			else if (command.equals("チョキ")) playerHand = 2;
 			else if (command.equals("パー"))  playerHand = 3;
 
-			Battle.result(playerHand ,enemyHnad);
+			boolean result = Battle.result(playerHand ,enemyHnad);
+			if(result == false){
+				Panel.contentsLabel.setText("ゲームオーバーです");
+			}
 		}
 	}
 
