@@ -37,14 +37,15 @@ import javax.swing.JPanel;
 			return(button);
 		}
 		public void actionPerformed(ActionEvent e) {
+			Enemy enemy = new Enemy();
+			int enemyHnad = enemy.createEnemyImage();
 			String command = e.getActionCommand();
 			int playerHand = 0;
 			if (command.equals("グー")) playerHand = 1;
 			else if (command.equals("チョキ")) playerHand = 2;
 			else if (command.equals("パー"))  playerHand = 3;
 
-//			int computerHand = Enemy.appear();
-//			Battle.result(computerHand, playerHand);
+			Battle.result(playerHand ,enemyHnad);
 		}
 	}
 

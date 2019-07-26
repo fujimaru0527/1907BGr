@@ -26,6 +26,9 @@ import javax.swing.JPanel;
 			//要調整
 			Dimension contentsPanelDimension = new Dimension(640, 380);
 			JPanel contentsPanel = setPanel(Color.WHITE,contentsPanelDimension);
+			//画像を読み込んで、表示させる。
+			Enemy enemy = new Enemy();
+			enemy.createEnemyImage();
 			contentsLabel = new JLabel("じゃんけん・・・");
 			contentsLabel = setFont(Color.BLACK,contentsLabel,54);
 			contentsPanel.add(contentsLabel);
