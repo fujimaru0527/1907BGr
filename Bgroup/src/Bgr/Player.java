@@ -6,11 +6,15 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 	public class Player implements ActionListener {
+		int playerHand=0;
+
 		public static void createButton(JPanel footerPanel) {
 			//ボタンを表示
 			JButton btnGu = new JButton("グー");
@@ -42,16 +46,31 @@ import javax.swing.JPanel;
 		}
 		public void actionPerformed(ActionEvent e) {
 			Enemy enemy = new Enemy();
-			int enemyHnad = enemy.createEnemyImage();
+			int enemyHand = enemy.createEnemyImage();
 			String command = e.getActionCommand();
-			int playerHand = 0;
+			//int playerHand = 0;
+			playerHand=0;
+			Timer timer = new Timer(false);
+			TimerTask task = new TimerTask() {
+				@Override
+				public void run() {
+					playerHand = enemyHand;
+					timer.cancel();
+				}
+			};
+			//1.0s後にtaskの中身を実行
+			timer.schedule(task, 2000);
+
 			if (command.equals("グー")) playerHand = 1;
 			else if (command.equals("チョキ")) playerHand = 2;
 			else if (command.equals("パー"))  playerHand = 3;
 
-			boolean result = Battle.result(playerHand ,enemyHnad);
+			if(playerHand!=0) timer.cancel();
+
+			boolean result = Battle.result(playerHand ,enemyHand);
 			if(result == false){
 				Panel.contentsLabel.setText("ゲームオーバーです");
+
 			}
 		}
 	}
