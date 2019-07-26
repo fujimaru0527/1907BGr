@@ -1,14 +1,13 @@
+package Bgr;
 
-public class Player {
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-	import java.awt.BorderLayout;
-	import java.awt.Dimension;
-	import java.awt.Font;
-	import java.awt.event.ActionEvent;
-	import java.awt.event.ActionListener;
-
-	import javax.swing.JButton;
-	import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 	public class Player implements ActionListener {
 		public static void createButton(JPanel footerPanel) {
@@ -44,9 +43,9 @@ public class Player {
 			else if (command.equals("チョキ")) playerHand = 2;
 			else if (command.equals("パー"))  playerHand = 3;
 
-			int computerHand = Computer.decidesComputerHand();
-			VictoryOrDefeat.decisionVictoryOrDefeat(computerHand, playerHand);
+//			int computerHand = Enemy.appear();
+//			Battle.result(computerHand, playerHand);
 		}
 	}
 
-}
+
