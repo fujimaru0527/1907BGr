@@ -68,11 +68,15 @@ import javax.swing.JPanel;
 			if(playerHand!=0) timer.cancel();
 
 			boolean result = Battle.result(playerHand ,enemyHand);
+
 			if(result == false){
-				Panel.contentsLabel.setText("ゲームオーバーです");
+				Panel.contentsLabel.setText("参りました");
+
+			}
+
 
 			}
 		}
-	}
+
 
 

@@ -11,11 +11,13 @@ public class Battle {
 		   playerHand == 2 && enemyHand == 3 ||
 		   playerHand == 3 && enemyHand == 1 ){
 			point +=1;
-			Panel.headerLabel.setText("あなたの勝ちです"+ point+"連勝" );
+			Panel.headerLabel.setText("あなたの勝ちです"+ "("+point+"連勝"+")" );
 			return true;
 		}else{
 			//勝利以外はすべて敗北
+			point = 0;
 			return false;
+
 		}
 	}
 }
