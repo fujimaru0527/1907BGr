@@ -29,6 +29,7 @@ import javax.swing.JPanel;
 			//画像を読み込んで、表示させる。
 			Enemy enemy = new Enemy();
 			enemy.createEnemyImage();
+			
 			contentsLabel = new JLabel("じゃんけん・・・");
 			contentsLabel = setFont(Color.BLACK,contentsLabel,54);
 			contentsPanel.add(contentsLabel);
