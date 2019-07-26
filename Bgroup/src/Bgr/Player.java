@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -14,14 +15,17 @@ import javax.swing.JPanel;
 			//ボタンを表示
 			JButton btnGu = new JButton("グー");
 			btnGu = setButton(btnGu);
+			btnGu.setMnemonic(KeyEvent.VK_1);
 			footerPanel.add(btnGu, BorderLayout.WEST);
 
 			JButton btnChoki = new JButton("チョキ");
 			btnChoki = setButton(btnChoki);
+			btnChoki.setMnemonic(KeyEvent.VK_2);
 			footerPanel.add(btnChoki, BorderLayout.CENTER);
 
 			JButton btnPa = new JButton("パー");
 			btnPa = setButton(btnPa);
+			btnPa.setMnemonic(KeyEvent.VK_3);
 			footerPanel.add(btnPa, BorderLayout.EAST);
 		}
 		public static JButton setButton(JButton button) {
